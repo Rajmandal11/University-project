@@ -1,0 +1,50 @@
+<svg width="620" height="620" viewBox="0 0 620 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGlow" x1="100" y1="60" x2="490" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#D9D9D9"/>
+    </linearGradient>
+    <linearGradient id="shell" x1="190" y1="120" x2="420" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F7F7"/>
+      <stop offset="1" stop-color="#C7C7C7"/>
+    </linearGradient>
+    <linearGradient id="face" x1="210" y1="170" x2="410" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#222222"/>
+      <stop offset="1" stop-color="#0A0A0A"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="310" cy="310" r="226" fill="url(#bgGlow)" stroke="#D5D5D5" stroke-width="2"/>
+  <circle cx="310" cy="310" r="206" fill="none" stroke="#E7E7E7" stroke-width="1.5" stroke-dasharray="4 10"/>
+  <circle cx="310" cy="310" r="146" fill="none"/>
+
+  <g filter="url(#shadow)">
+    <path d="M180 150C180 127.909 197.909 110 220 110H400C422.091 110 440 127.909 440 150V170C440 202.033 412.033 230 380 230H240C207.967 230 180 202.033 180 170V150Z" fill="url(#shell)" stroke="#1B1B1B" stroke-width="3"/>
+    <path d="M230 155H390C404.359 155 416 166.641 416 181V202C416 216.359 404.359 228 390 228H230C215.641 228 204 216.359 204 202V181C204 166.641 215.641 155 230 155Z" fill="url(#face)"/>
+    <circle cx="278" cy="193" r="10" fill="#F1F1F1"/>
+    <circle cx="342" cy="193" r="10" fill="#F1F1F1"/>
+    <rect x="284" y="141" width="52" height="10" rx="5" fill="#202020"/>
+
+    <path d="M150 230H470V361C470 395.242 441.242 424 407 424H213C178.758 424 150 395.242 150 361V230H150Z" fill="url(#shell)" stroke="#1A1A1A" stroke-width="3"/>
+    <path d="M218 310H402V334C402 356.091 384.091 374 362 374H258C235.909 374 218 356.091 218 334V310H218Z" fill="#E2E2E2" stroke="#171717" stroke-width="3"/>
+    <path d="M240 258H380" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
+
+    <rect x="256" y="282" width="108" height="42" rx="16" fill="#D8D8D8" stroke="#191919" stroke-width="2"/>
+    <text x="310" y="308" text-anchor="middle" fill="#111111" font-size="22" font-family="Arial, Helvetica, sans-serif" font-weight="700">AI</text>
+
+    <rect x="186" y="380" width="46" height="92" rx="14" fill="#B5B5B5" stroke="#1B1B1B" stroke-width="3"/>
+    <rect x="388" y="380" width="46" height="92" rx="14" fill="#B5B5B5" stroke="#1B1B1B" stroke-width="3"/>
+
+    <path d="M238 438H382" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round"/>
+    <path d="M259 444V462H361V444" stroke="#171717" stroke-width="4" stroke-linecap="round"/>
+
+    <circle cx="220" cy="446" r="18" fill="#ECECEC" stroke="#1A1A1A" stroke-width="3"/>
+    <circle cx="400" cy="446" r="18" fill="#ECECEC" stroke="#1A1A1A" stroke-width="3"/>
+  </g>
+
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#1D1D1D" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+</svg>

@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --shared-bg: #f2f1ef;
+    --shared-ink: #151515;
+    --shared-muted: #666666;
+    --shared-line: rgba(21, 21, 21, 0.12);
+}
+
+body {
+    margin: 0;
+}
+
+.site,
+.page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 67% 47%, rgba(255, 255, 255, 0.96) 0 17%, transparent 17.2%),
+        repeating-radial-gradient(circle at 67% 47%, transparent 0 106px, rgba(21, 21, 21, 0.075) 107px 108px),
+        var(--shared-bg);
+    color: var(--shared-ink);
+}
+
+body::before {
+    background: none !important;
+}
+
+.shared-header {
+    position: relative;
+    z-index: 100;
+    min-height: 92px;
+    padding: 0 5.7vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: normal;
+}
+
+.shared-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--shared-ink);
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.24em;
+    white-space: nowrap;
+}
+
+.shared-brand-mark {
+    width: 29px;
+    height: 29px;
+    border: 2px solid currentColor;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    letter-spacing: 0;
+    transform: rotate(-5deg);
+}
+
+.shared-nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    margin-left: auto;
+}
+
+.shared-nav a {
+    color: var(--shared-muted);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.shared-nav a:hover,
+.shared-nav a.active {
+    color: var(--shared-ink);
+}
+
+.shared-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.shared-icon,
+.shared-explore {
+    height: 42px;
+    border: 1px solid var(--shared-line);
+    background: rgba(255, 255, 255, 0.28);
+    color: var(--shared-ink);
+}
+
+.shared-icon {
+    width: 42px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.shared-explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 17px;
+    padding: 4px 9px 4px 22px;
+    border-radius: 24px;
+    background: var(--shared-ink);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.shared-explore span {
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    color: var(--shared-ink);
+    font-size: 16px;
+}
+
+@media (max-width: 720px) {
+    .shared-header {
+        min-height: 78px;
+        padding: 0 20px;
+        gap: 14px;
+    }
+
+    .shared-nav {
+        gap: 14px;
+    }
+
+    .shared-nav a {
+        font-size: 11px;
+    }
+
+    .shared-actions {
+        gap: 6px;
+    }
+
+    .shared-icon {
+        display: none;
+    }
+
+    .shared-explore {
+        padding-left: 13px;
+        gap: 8px;
+        font-size: 11px;
+    }
+}

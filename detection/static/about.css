@@ -1,0 +1,1519 @@
+/* =========================================================
+   RESET
+   ========================================================= */
+   
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg: #f0efed;
+    --bg-soft: #e8e7e4;
+    --surface: #f7f6f5;
+    --ink: #131313;
+    --ink-2: #555555;
+    --ink-3: #9a9a9a;
+    --line: #e0dfdc;
+    --pill: #131313;
+    --pill-text: #ffffff;
+    --background: #f0efed;
+    --accent: #ff8a00;
+    --radius: 22px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --transition: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    background: #080808;
+
+    color: #f5f5f5;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================================
+   HIDE RADIO BUTTONS
+   ========================================================= */
+
+input[type="radio"] {
+
+    position: fixed;
+
+    width: 1px;
+
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.page {
+
+    min-height: 100vh;
+
+    background:
+
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(180, 178, 178, 0.08),
+            transparent 25%
+        ),
+
+        var(--background);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 5vw;
+
+    border-bottom:
+        1px solid var(--line);
+
+    position: relative;
+
+    z-index: 100;
+
+}
+
+
+.logo {
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: .18em;
+
+}
+
+
+.logo span {
+
+    color: var(--accent);
+
+    margin: 0 5px;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+
+nav a {
+
+    color: #707070;
+
+    font-size: 9px;
+
+    letter-spacing: .2em;
+
+    transition: .3s ease;
+
+}
+
+
+nav a:hover {
+
+    color: white;
+
+}
+
+
+nav a.active {
+
+    color: white;
+
+}
+
+
+.status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #666;
+
+    font-size: 8px;
+
+    letter-spacing: .2em;
+
+}
+
+
+.status span {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 15px var(--accent);
+
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.about {
+
+    min-height:
+        calc(100vh - 80px);
+
+    display: grid;
+
+    grid-template-columns:
+        43% 57%;
+
+}
+
+
+/* =========================================================
+   LEFT INFORMATION PANEL
+   ========================================================= */
+
+.information {
+
+    position: relative;
+
+    z-index: 20;
+
+    padding:
+        7vh
+        7vw
+        5vh
+        8vw;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    background: #0b0b0b;
+    color: #f5f5f5;
+
+    clip-path:
+        ellipse(
+            82% 85%
+            at 32% 50%
+        );
+
+}
+
+
+/* =========================================================
+   TOP LABEL
+   ========================================================= */
+
+.top-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    width: 450px;
+
+    max-width: 100%;
+
+    color: #8f8f8f;
+
+    font-size: 8px;
+
+    letter-spacing: .2em;
+
+}
+
+
+/* =========================================================
+   MAIN TEXT
+   ========================================================= */
+
+.main-text {
+
+    max-width: 520px;
+
+}
+
+.information .main-text h1,
+.information .person-info h2,
+.information .stats strong {
+    color: #f5f5f5;
+}
+
+
+.main-text small {
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    letter-spacing: .3em;
+
+}
+
+
+h1 {
+
+    margin-top: 17px;
+
+    font-size:
+        clamp(
+            45px,
+            5vw,
+            82px
+        );
+
+    line-height: .88;
+
+    letter-spacing: -.06em;
+
+    font-weight: 900;
+
+}
+
+
+h1 i {
+
+    font-style: normal;
+
+    color: transparent;
+
+    -webkit-text-stroke:
+        1px #eeeeee;
+
+}
+
+
+.intro {
+
+    max-width: 390px;
+
+    margin-top: 28px;
+
+    color: #b0b0b0;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   PERSON INFORMATION
+   ========================================================= */
+
+.person-info {
+
+    margin-top: 42px;
+
+    min-height: 190px;
+
+    animation:
+        informationReveal
+        .7s
+        var(--transition);
+
+}
+
+
+.person-info.info2,
+.person-info.info3,
+.person-info.info4 {
+
+    display: none;
+
+}
+
+
+.person-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.person-meta span:first-child {
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    letter-spacing: .15em;
+
+}
+
+
+.person-meta span:last-child {
+
+    color: #969696;
+
+    font-size: 8px;
+
+    letter-spacing: .2em;
+
+}
+
+
+.person-info h2 {
+
+    font-size:
+        clamp(
+            26px,
+            2.5vw,
+            38px
+        );
+
+    letter-spacing: -.04em;
+
+    font-weight: 700;
+
+}
+
+
+.person-info > p {
+
+    max-width: 430px;
+
+    margin-top: 12px;
+
+    color: #b0b0b0;
+
+    font-size: 11px;
+
+    line-height: 1.75;
+
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.stats {
+
+    display: flex;
+
+    gap: 28px;
+
+    margin-top: 23px;
+
+}
+
+
+.stats div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.stats strong {
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+}
+
+
+.stats span {
+
+    color: #969696;
+
+    font-size: 7px;
+
+    letter-spacing: .14em;
+
+}
+
+
+/* =========================================================
+   BOTTOM LINE
+   ========================================================= */
+
+.bottom-line {
+
+    width: 450px;
+
+    max-width: 100%;
+
+    border-top:
+        1px solid var(--line);
+
+    padding-top: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #969696;
+
+    font-size: 8px;
+
+    letter-spacing: .2em;
+
+}
+
+
+.bottom-line span:last-child {
+
+    color: var(--accent);
+
+    font-size: 18px;
+
+}
+
+
+/* =========================================================
+   VISUAL AREA
+   ========================================================= */
+
+.visual {
+
+    position: relative;
+
+    min-height:
+        calc(100vh - 80px);
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+   ========================================================= */
+
+.visual::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .14;
+
+    background-image:
+
+        linear-gradient(
+            rgba(187, 182, 182, 0.05)
+            1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(169, 162, 162, 0.05)
+            1px,
+            transparent 1px
+        );
+
+    background-size:
+        55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 20%,
+            black 80%,
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   VERTICAL TEXT
+   ========================================================= */
+
+.vertical-text {
+
+    position: absolute;
+
+    right: 25px;
+
+    top: 13%;
+
+    writing-mode:
+        vertical-rl;
+
+    color: var(--accent);
+
+    opacity: .8;
+
+    font-size: 8px;
+
+    letter-spacing: .4em;
+
+    z-index: 50;
+
+}
+
+
+/* =========================================================
+   VISUAL HEADER
+   ========================================================= */
+
+.visual-header {
+
+    position: absolute;
+
+    top: 7%;
+
+    left: 7%;
+
+    right: 12%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #646464;
+
+    font-size: 8px;
+
+    letter-spacing: .2em;
+
+    z-index: 50;
+
+}
+
+
+/* =========================================================
+   IMAGE AREA
+   ========================================================= */
+
+.image-area {
+
+    position: absolute;
+
+    inset:
+        10%
+        8%
+        11%
+        5%;
+
+}
+
+
+/* =========================================================
+   PERSON CARD
+   ========================================================= */
+
+.person-card {
+
+    position: absolute;
+
+    display: block;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    border:
+        1px solid rgba(255,255,255,.25);
+
+    background: #222;
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.6);
+
+    transition:
+
+        transform
+        1s
+        var(--transition),
+
+        width
+        1s
+        var(--transition),
+
+        height
+        1s
+        var(--transition),
+
+        left
+        1s
+        var(--transition),
+
+        top
+        1s
+        var(--transition),
+
+        opacity
+        .7s
+        ease,
+
+        filter
+        .7s
+        ease;
+
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.person-card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter:
+        grayscale(1)
+        contrast(1.08);
+
+    transition:
+        transform
+        1.2s
+        var(--transition),
+
+        filter
+        .7s
+        ease;
+
+}
+
+
+.person-card:hover img {
+
+    transform:
+        scale(1.05);
+
+    filter:
+        grayscale(.6)
+        contrast(1.1);
+
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+   ========================================================= */
+
+.person-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.05),
+            transparent 45%,
+            rgba(0,0,0,.7)
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   IMAGE TEXT
+   ========================================================= */
+
+.image-number {
+
+    position: absolute;
+
+    top: 12px;
+
+    left: 12px;
+
+    z-index: 5;
+
+    color: white;
+
+    font-size: 8px;
+
+    letter-spacing: .18em;
+
+}
+
+
+.view {
+
+    position: absolute;
+
+    bottom: 12px;
+
+    right: 12px;
+
+    z-index: 5;
+
+    color: var(--accent);
+
+    font-size: 8px;
+
+    letter-spacing: .15em;
+
+    opacity: 0;
+
+    transform:
+        translateY(8px);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.person-card:hover .view {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   INITIAL IMAGE POSITIONS
+   ========================================================= */
+
+.card1 {
+
+    width: 31%;
+
+    height: 48%;
+
+    left: 4%;
+
+    top: 21%;
+
+    transform:
+        rotate(-7deg);
+
+    z-index: 4;
+
+}
+
+
+.card2 {
+
+    width: 35%;
+
+    height: 52%;
+
+    left: 31%;
+
+    top: 5%;
+
+    transform:
+        rotate(5deg);
+
+    z-index: 3;
+
+}
+
+
+.card3 {
+
+    width: 32%;
+
+    height: 49%;
+
+    left: 51%;
+
+    top: 34%;
+
+    transform:
+        rotate(-4deg);
+
+    z-index: 2;
+
+}
+
+
+.card4 {
+
+    width: 30%;
+
+    height: 46%;
+
+    left: 22%;
+
+    top: 58%;
+
+    transform:
+        rotate(7deg);
+
+    z-index: 1;
+
+}
+
+
+/* =========================================================
+   PERSON 1 ACTIVE
+   ========================================================= */
+
+#person1:checked ~ .page .card1 {
+
+    width: 43%;
+
+    height: 68%;
+
+    left: 29%;
+
+    top: 16%;
+
+    transform:
+        rotate(0deg)
+        scale(1.02);
+
+    opacity: 1;
+
+    filter: none;
+
+    z-index: 20;
+
+    border-color:
+        var(--accent);
+
+}
+
+
+#person1:checked ~ .page .card2,
+#person1:checked ~ .page .card3,
+#person1:checked ~ .page .card4 {
+
+    opacity: .35;
+
+    filter:
+        brightness(.5);
+
+}
+
+
+/* =========================================================
+   PERSON 2 ACTIVE
+   ========================================================= */
+
+#person2:checked ~ .page .card2 {
+
+    width: 43%;
+
+    height: 68%;
+
+    left: 29%;
+
+    top: 16%;
+
+    transform:
+        rotate(0deg)
+        scale(1.02);
+
+    opacity: 1;
+
+    z-index: 20;
+
+    border-color:
+        var(--accent);
+
+}
+
+
+#person2:checked ~ .page .card1,
+#person2:checked ~ .page .card3,
+#person2:checked ~ .page .card4 {
+
+    opacity: .35;
+
+    filter:
+        brightness(.5);
+
+}
+
+
+/* =========================================================
+   PERSON 3 ACTIVE
+   ========================================================= */
+
+#person3:checked ~ .page .card3 {
+
+    width: 43%;
+
+    height: 68%;
+
+    left: 29%;
+
+    top: 16%;
+
+    transform:
+        rotate(0deg)
+        scale(1.02);
+
+    opacity: 1;
+
+    z-index: 20;
+
+    border-color:
+        var(--accent);
+
+}
+
+
+#person3:checked ~ .page .card1,
+#person3:checked ~ .page .card2,
+#person3:checked ~ .page .card4 {
+
+    opacity: .35;
+
+    filter:
+        brightness(.5);
+
+}
+
+
+/* =========================================================
+   PERSON 4 ACTIVE
+   ========================================================= */
+
+#person4:checked ~ .page .card4 {
+
+    width: 43%;
+
+    height: 68%;
+
+    left: 29%;
+
+    top: 16%;
+
+    transform:
+        rotate(0deg)
+        scale(1.02);
+
+    opacity: 1;
+
+    z-index: 20;
+
+    border-color:
+        var(--accent);
+
+}
+
+
+#person4:checked ~ .page .card1,
+#person4:checked ~ .page .card2,
+#person4:checked ~ .page .card3 {
+
+    opacity: .35;
+
+    filter:
+        brightness(.5);
+
+}
+
+
+/* =========================================================
+   INFORMATION SWITCHING
+   ========================================================= */
+
+#person1:checked ~ .page .info1 {
+
+    display: block;
+
+}
+
+
+#person1:checked ~ .page .info2,
+#person1:checked ~ .page .info3,
+#person1:checked ~ .page .info4 {
+
+    display: none;
+
+}
+
+
+#person2:checked ~ .page .info1,
+#person2:checked ~ .page .info3,
+#person2:checked ~ .page .info4 {
+
+    display: none;
+
+}
+
+
+#person2:checked ~ .page .info2 {
+
+    display: block;
+
+    animation:
+        informationReveal
+        .7s
+        var(--transition);
+
+}
+
+
+#person3:checked ~ .page .info1,
+#person3:checked ~ .page .info2,
+#person3:checked ~ .page .info4 {
+
+    display: none;
+
+}
+
+
+#person3:checked ~ .page .info3 {
+
+    display: block;
+
+    animation:
+        informationReveal
+        .7s
+        var(--transition);
+
+}
+
+
+#person4:checked ~ .page .info1,
+#person4:checked ~ .page .info2,
+#person4:checked ~ .page .info3 {
+
+    display: none;
+
+}
+
+
+#person4:checked ~ .page .info4 {
+
+    display: block;
+
+    animation:
+        informationReveal
+        .7s
+        var(--transition);
+
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes informationReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   VISUAL FOOTER
+   ========================================================= */
+
+.visual-footer {
+
+    position: absolute;
+
+    left: 7%;
+
+    right: 10%;
+
+    bottom: 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #5d5d5d;
+
+    font-size: 7px;
+
+    letter-spacing: .18em;
+
+    z-index: 50;
+
+}
+
+
+/* =========================================================
+   SIDE LABELS
+   ========================================================= */
+
+.side {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    color: #555;
+
+    font-size: 7px;
+
+    letter-spacing: .25em;
+
+    z-index: 100;
+
+}
+
+
+.left-side {
+
+    left: 18px;
+
+    writing-mode:
+        vertical-rl;
+
+    transform:
+        rotate(180deg);
+
+}
+
+
+.right-side {
+
+    right: 18px;
+
+    writing-mode:
+        vertical-rl;
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    nav {
+
+        gap: 15px;
+
+    }
+
+
+    .status {
+
+        display: none;
+
+    }
+
+
+    .about {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .information {
+
+        min-height: 600px;
+
+        padding:
+            60px
+            9vw
+            90px;
+
+        clip-path: none;
+
+    }
+
+
+    .visual {
+
+        min-height: 700px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+
+        height: 70px;
+
+        padding:
+            0 6vw;
+
+    }
+
+
+    nav {
+
+        display: none;
+
+    }
+
+
+    .about {
+
+        display: block;
+
+    }
+
+
+    .information {
+
+        min-height: 570px;
+
+        padding:
+            45px
+            8vw
+            70px;
+
+    }
+
+
+    h1 {
+
+        font-size: 48px;
+
+    }
+
+
+    .intro {
+
+        font-size: 11px;
+
+    }
+
+
+    .stats {
+
+        gap: 15px;
+
+    }
+
+
+    .stats strong {
+
+        font-size: 14px;
+
+    }
+
+
+    .visual {
+
+        min-height: 620px;
+
+    }
+
+
+    .image-area {
+
+        inset:
+            9%
+            5%
+            10%
+            5%;
+
+    }
+
+
+    .card1,
+    .card2,
+    .card3,
+    .card4 {
+
+        width: 48%;
+
+        height: 40%;
+
+    }
+
+
+    .card1 {
+
+        left: 0;
+
+        top: 14%;
+
+    }
+
+
+    .card2 {
+
+        left: 43%;
+
+        top: 5%;
+
+    }
+
+
+    .card3 {
+
+        left: 47%;
+
+        top: 49%;
+
+    }
+
+
+    .card4 {
+
+        left: 4%;
+
+        top: 57%;
+
+    }
+
+
+    #person1:checked ~ .page .card1,
+    #person2:checked ~ .page .card2,
+    #person3:checked ~ .page .card3,
+    #person4:checked ~ .page .card4 {
+
+        width: 63%;
+
+        height: 57%;
+
+        left: 18%;
+
+        top: 21%;
+
+    }
+
+
+    .vertical-text {
+
+        right: 7px;
+
+        font-size: 6px;
+
+    }
+
+
+    .visual-footer {
+
+        left: 6%;
+
+        right: 6%;
+
+    }
+
+
+    .visual-footer span:nth-child(2) {
+
+        display: none;
+
+    }
+
+
+    .side {
+
+        display: none;
+
+    }
+
+}
