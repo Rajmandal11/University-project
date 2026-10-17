@@ -1,0 +1,496 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About</title>
+
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+    <link rel="stylesheet" href="{% static 'shared.css' %}">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         CSS ONLY CONTROLS
+         ===================================================== -->
+
+    <input type="radio" name="person" id="person1" checked>
+    <input type="radio" name="person" id="person2">
+    <input type="radio" name="person" id="person3">
+    <input type="radio" name="person" id="person4">
+
+
+    <!-- =====================================================
+         MAIN PAGE
+         ===================================================== -->
+
+    <div class="page">
+
+
+        <!-- =================================================
+             NAVBAR
+             ================================================= -->
+
+        <header class="shared-header">
+            <nav class="shared-nav">
+                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'about' %}" class="active">About</a>
+            </nav>
+            <div class="shared-actions">
+                <button class="shared-icon" aria-label="Theme">☼</button>
+                <button class="shared-icon" aria-label="Menu">☰</button>
+                <a href="{% url 'index' %}" class="shared-explore">Explore Now <span>↗</span></a>
+            </div>
+        </header>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+             ================================================= -->
+
+        <main class="about">
+
+
+            <!-- =================================================
+                 LEFT SIDE
+                 ================================================= -->
+
+            <section class="information">
+
+                <div class="top-label">
+
+                    <span>ABOUT US</span>
+
+                    <span>
+                        NEURAL SYSTEM
+                    </span>
+
+                </div>
+
+
+                <div class="main-text">
+
+                    <small>
+                        WE DETECT
+                    </small>
+
+                    <h1>
+                        DETECTION
+                        <br>
+                        <i>THAT SEES.</i>
+                    </h1>
+
+
+                    <p class="intro">
+
+                        We build object detection systems that find, 
+                        label, and track every object in your images 
+                        and video, in real time.
+
+                    </p>
+
+
+
+                    <!-- ==========================================
+                         PERSON 1 INFORMATION
+                         ========================================== -->
+
+                    <div class="person-info info1">
+
+                        <div class="person-meta">
+
+                            <span>01</span>
+
+                            <span>
+                                AI/ML STUDENT
+                            </span>
+
+                        </div>
+
+                        <h2>
+                            RAJ KUMAR MANDAL
+                        </h2>
+
+                        <p>
+
+                            YOLO detects cars, people, bikes, and signs in
+                            busy street video in a single pass, and a tracker 
+                            follows each one across frames.
+
+                        </p>
+
+
+                        <div class="stats">
+
+                            <div>
+                                <strong>98.7%</strong>
+                                <span>MODEL ACCURACY</span>
+                            </div>
+
+                            <div>
+                                <strong>12</strong>
+                                <span>FPS real-time</span>
+                            </div>
+
+                            <div>
+                                <strong>01</strong>
+                                <span>Pass per frame</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==========================================
+                         PERSON 2 INFORMATION
+                         ========================================== -->
+
+                    <div class="person-info info2">
+
+                        <div class="person-meta">
+
+                            <span>02</span>
+
+                            <span>
+                                AI/ML STUDENT
+                            </span>
+
+                        </div>
+
+                        <h2>
+                            GYAN ADHIKARI
+                        </h2>
+
+                        <p>
+
+                            GYAN designs real-time computer vision
+                            systems for object detection, tracking,
+                            segmentation and visual intelligence.
+
+                        </p>
+
+
+                        <div class="stats">
+
+                            <div>
+                                <strong>97.4%</strong>
+                                <span>DETECTION RATE</span>
+                            </div>
+
+                            <div>
+                                <strong>24</strong>
+                                <span>CV PROJECTS</span>
+                            </div>
+
+                            <div>
+                                <strong>01</strong>
+                                <span>Pass per frame</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==========================================
+                         PERSON 3 INFORMATION
+                         ========================================== -->
+
+                    <div class="person-info info3">
+
+                        <div class="person-meta">
+
+                            <span>03</span>
+
+                            <span>
+                                MACHINE LEARNING ARCHITECT
+                            </span>
+
+                        </div>
+
+                        <h2>
+                            AASHIK KUMAR SAH
+                        </h2>
+
+                        <p>
+
+                            AASHIK develops scalable machine learning
+                            architectures and transforms complex
+                            datasets into intelligent predictive
+                            systems.
+
+                        </p>
+
+
+                        <div class="stats">
+
+                            <div>
+                                <strong>99.1%</strong>
+                                <span>PIPELINE EFFICIENCY</span>
+                            </div>
+
+                            <div>
+                                <strong>31</strong>
+                                <span>ML MODELS</span>
+                            </div>
+
+                            <div>
+                                <strong>01</strong>
+                                <span>Pass per frame</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==========================================
+                         PERSON 4 INFORMATION
+                         ========================================== -->
+
+                    <div class="person-info info4">
+
+                        <div class="person-meta">
+
+                            <span>04</span>
+
+                            <span>
+                                NEURAL SYSTEMS ENGINEER
+                            </span>
+
+                        </div>
+
+                        <h2>SITAL KUMAR YADAV</h2>
+                            
+                        </h2>
+
+                        <p>
+
+                            SITAL works on neural processing systems
+                            that combine perception, learning and
+                            real-time decision making.
+
+                        </p>
+
+
+                        <div class="stats">
+
+                            <div>
+                                <strong>96.8%</strong>
+                                <span>SYSTEM RESPONSE</span>
+                            </div>
+
+                            <div>
+                                <strong>18</strong>
+                                <span>NEURAL MODELS</span>
+                            </div>
+
+                            <div>
+                                <strong>01</strong>
+                                <span>Pass per frame</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bottom-line">
+
+                    <span>
+                        EXPLORE OUR PEOPLE
+                    </span>
+
+                    <span>
+                        ↗
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RIGHT IMAGE AREA
+                 ================================================= -->
+
+            <section class="visual">
+
+
+                <div class="vertical-text">
+
+                    AI • VISION • INTELLIGENCE • HUMAN • MACHINE
+
+                </div>
+
+
+                <div class="visual-header">
+
+                    <span>
+                        LIVE / PEOPLE
+                    </span>
+
+                    <span>
+                        04 SUBJECTS
+                    </span>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PERSON IMAGES
+                     ================================================= -->
+
+                <div class="image-area">
+
+
+                    <!-- PERSON 1 -->
+
+                    <label
+                        for="person1"
+                        class="person-card card1"
+                    >
+
+                        <img
+                            src="{% static 'images/person-01.jpg' %}"
+                            alt="Person 01"
+                        >
+
+                        <div class="image-number">
+                            01 / RAJ
+                        </div>
+
+                        <div class="view">
+                            VIEW PROFILE ↗
+                        </div>
+
+                    </label>
+
+
+
+                    <!-- PERSON 2 -->
+
+                    <label
+                        for="person2"
+                        class="person-card card2"
+                    >
+
+                        <img
+                            src="{% static 'images/person-02.jpg' %}"
+                            alt="Person 02"
+                        >
+
+                        <div class="image-number">
+                            02 / GYAN
+                        </div>
+
+                        <div class="view">
+                            VIEW PROFILE ↗
+                        </div>
+
+                    </label>
+
+
+
+                    <!-- PERSON 3 -->
+
+                    <label
+                        for="person3"
+                        class="person-card card3"
+                    >
+
+                        <img
+                            src="{% static 'images/person-03.jpg' %}"
+                            alt="Person 03"
+                        >
+
+                        <div class="image-number">
+                            03 / AASHIK
+                        </div>
+
+                        <div class="view">
+                            VIEW PROFILE ↗
+                        </div>
+
+                    </label>
+
+
+
+                    <!-- PERSON 4 -->
+
+                    <label
+                        for="person4"
+                        class="person-card card4"
+                    >
+
+                        <img
+                            src="{% static 'images/person-04.jpg' %}"
+                            alt="Person 04"
+                        >
+
+                        <div class="image-number">
+                            04 / SITAL
+                        </div>
+
+                        <div class="view">
+                            VIEW PROFILE ↗
+                        </div>
+
+                    </label>
+
+
+                </div>
+
+
+
+                <div class="visual-footer">
+
+                    <span>
+                        VISION NODE / 04
+                    </span>
+
+                    <span>
+                        CLICK A SUBJECT TO ROTATE
+                    </span>
+
+                    <span>
+                        STATUS: ACTIVE
+                    </span>
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+
+
+        <!-- SIDE LABELS -->
+
+        <div class="side left-side">
+            NEURAL PERCEPTION
+        </div>
+
+        <div class="side right-side">
+            HUMAN × MACHINE
+        </div>
+
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> DETECTION</title>
+    <link rel="stylesheet" href="{% static 'shared.css' %}">
+    <link rel="stylesheet" href="{% static 'landing.css' %}">
+</head>
+
+<body>
+
+<div class="site">
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="shared-header">
+        <a href="{% url 'landing' %}" class="shared-brand">
+            <span class="shared-brand-mark">OB</span>
+            DETECTION
+        </a>
+        <nav class="shared-nav">
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+        </nav>
+        <div class="shared-actions">
+            <button class="shared-icon" aria-label="Theme">☼</button>
+            <button class="shared-icon" aria-label="Menu">☰</button>
+            <a href="{% url 'index' %}" class="shared-explore">Explore Now <span>↗</span></a>
+        </div>
+    </header>
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <main class="hero">
+        <!-- LEFT CONTENT -->
+        <section class="hero-content">
+
+            <div class="eyebrow">
+                OBJECT DETECTION
+            </div>
+            <h1>
+                DETECT..
+                <br>
+                <span>REIMAGINED.</span>
+                <br>
+                <em>TRACK.</em>
+            </h1>
+
+
+            <div class="small-line"></div>
+
+
+            <p>
+                Real-time object detection that finds, labels, 
+                and tracks every object in your images and video.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#" class="discover">
+                    Discover More
+                    <span>↗</span>
+                </a>
+
+                <a href="#" class="video-button">
+
+                    <span class="play">
+                        ▶
+                    </span>
+
+                    <span>
+                        Watch Video
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             ROBOT AREA
+        ========================================== -->
+
+        <section class="robot-area">
+
+            <div class="orb"></div>
+            <div class="orb-small"></div>
+
+            <div class="hero-visual-wrap">
+                <img src="{% static 'pp.png' %}" alt="AI robot illustration" class="hero-visual" />
+            </div>
+
+            <!-- technical labels -->
+
+            <div class="tech-label label-1">
+                AI VISION
+            </div>
+
+            <div class="tech-label label-2">
+                NEURAL CORE
+            </div>
+
+            <div class="tech-label label-3">
+                360° SYSTEM
+            </div>
+
+
+            <!-- side numbers -->
+
+            <div class="side-pagination">
+
+                <span class="selected">
+                    01
+                </span>
+
+                <i></i>
+
+                <span>
+                    02
+                </span>
+
+                <span>
+                    03
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FEATURE BAR
+    ========================================== -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ◉
+            </div>
+
+            <div>
+                <strong>
+                    Real-Time Detection
+                </strong>
+
+                <p>
+                    Finds objects in every frame as it arrives.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ≋
+            </div>
+
+            <div>
+                <strong>
+                    Multi-Class Labels
+                </strong>
+
+                <p>
+                    Recognizes over 80 object categories.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ▣
+            </div>
+
+            <div>
+                <strong>
+                    Object Tracking
+                </strong>
+
+                <p>
+                    Follows each object across frames.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ◇
+            </div>
+
+            <div>
+                <strong>
+                    Edge Deployment
+                </strong>
+
+                <p>
+                    Runs on cameras, phones, and drones.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+</body>
+</html>

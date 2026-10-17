@@ -1,0 +1,603 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Neural Vision | DETECTION </title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'style.css' %}?v=2"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <div class="background-cube" aria-hidden="true">
+        <span class="cube-face cube-front"></span>
+        <span class="cube-face cube-back"></span>
+        <span class="cube-face cube-left"></span>
+        <span class="cube-face cube-right"></span>
+        <span class="cube-face cube-top"></span>
+        <span class="cube-face cube-bottom"></span>
+    </div>
+
+    <!-- ================================= -->
+    <!-- NAVBAR -->
+    <!-- ================================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <span class="logo-dot"></span>
+
+            <span>
+                NEURAL<span>VISION</span>
+            </span>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================================= -->
+    <!-- HEADER -->
+    <!-- ================================= -->
+
+    <main class="main">
+
+        <section class="hero">
+
+            <div>
+
+                <div class="eyebrow">
+                    AI / COMPUTER VISION SYSTEM
+                </div>
+
+                <h1>
+                    OBJECT
+                    <span>DETECTION</span>
+                </h1>
+
+                <p>
+                    Real-time object detection,
+                    image analysis and video
+                    surveillance powered by YOLO.
+                </p>
+
+            </div>
+
+
+            <div class="system-status">
+
+                <span class="status-light"></span>
+
+                SYSTEM ONLINE
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- MODE SELECTOR -->
+        <!-- ================================= -->
+
+        <section class="control-panel">
+
+            <div class="mode-buttons">
+
+                <button
+                    class="mode-btn active"
+                    onclick="showMode('photo', this)"
+                >
+                    <span>01</span>
+                    PHOTO
+                </button>
+
+
+                <button
+                    class="mode-btn"
+                    onclick="showMode('video', this)"
+                >
+                    <span>02</span>
+                    VIDEO
+                </button>
+
+
+                <button
+                    class="mode-btn"
+                    onclick="showMode('live', this)"
+                >
+                    <span>03</span>
+                    LIVE CAMERA
+                </button>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- PHOTO MODE -->
+            <!-- ================================= -->
+
+            <div
+                id="photo"
+                class="mode-content active"
+            >
+
+                <div class="mode-title">
+
+                    <span class="number">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            IMAGE ANALYSIS
+                        </h2>
+
+                        <p>
+                            Upload an image for
+                            object detection.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form
+                    method="POST"
+                    enctype="multipart/form-data"
+                >
+
+                    {% csrf_token %}
+
+                    <input
+                        type="hidden"
+                        name="detection_type"
+                        value="image"
+                    >
+
+
+                    <label class="upload-box">
+
+                        <div class="upload-icon">
+                            +
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                SELECT IMAGE
+                            </strong>
+
+                            <small>
+                                JPG / PNG / WEBP
+                            </small>
+
+                        </div>
+
+                        <input
+                            type="file"
+                            name="image"
+                            accept="image/*"
+                            required
+                        >
+
+                    </label>
+
+
+                    <button
+                        type="submit"
+                        class="analyze-btn"
+                    >
+                        RUN YOLO
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- VIDEO MODE -->
+            <!-- ================================= -->
+
+            <div
+                id="video"
+                class="mode-content"
+            >
+
+                <div class="mode-title">
+
+                    <span class="number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            VIDEO ANALYSIS
+                        </h2>
+
+                        <p>
+                            Upload a video and process
+                            every frame using YOLO.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form
+                    method="POST"
+                    enctype="multipart/form-data"
+                >
+
+                    {% csrf_token %}
+
+                    <input
+                        type="hidden"
+                        name="detection_type"
+                        value="video"
+                    >
+
+
+                    <label class="upload-box">
+
+                        <div class="upload-icon">
+                            +
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                SELECT VIDEO
+                            </strong>
+
+                            <small>
+                                MP4 / AVI / MOV / MKV
+                            </small>
+
+                        </div>
+
+                        <input
+                            type="file"
+                            name="video"
+                            accept="video/*"
+                            required
+                        >
+
+                    </label>
+
+
+                    <button
+                        type="submit"
+                        class="analyze-btn"
+                    >
+                        PROCESS VIDEO
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- LIVE MODE -->
+            <!-- ================================= -->
+
+            <div
+                id="live"
+                class="mode-content"
+            >
+
+                <div class="mode-title">
+
+                    <span class="number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            LIVE DETECTION
+                        </h2>
+
+                        <p>
+                            YOLO-powered real-time
+                            camera detection.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="live-camera">
+
+                    <img
+                        src="{% url 'live_detection' %}"
+                        alt="Live YOLO camera"
+                    >
+
+
+                    <div class="live-overlay">
+
+                        <span class="live-dot"></span>
+
+                        LIVE YOLO FEED
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- IMAGE RESULT -->
+        <!-- ================================= -->
+
+        {% if result_url %}
+
+        <section class="result-section">
+
+            <div class="result-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        ANALYSIS COMPLETE
+                    </span>
+
+                    <h2>
+                        DETECTION RESULT
+                    </h2>
+
+                </div>
+
+                <div class="result-count">
+
+                    {{ detections|length }}
+
+                    <span>
+                        OBJECTS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-grid">
+
+                <div class="result-image">
+
+                    <img
+                        src="{{ result_url }}"
+                        alt="YOLO result"
+                    >
+
+                </div>
+
+
+                <div class="detections">
+
+                    <h3>
+                        DETECTED OBJECTS
+                    </h3>
+
+
+                    {% for detection in detections %}
+
+                    <div class="detection-row">
+
+                        <div>
+
+                            <span class="object-dot"></span>
+
+                            <strong>
+                                {{ detection.class|upper }}
+                            </strong>
+
+                        </div>
+
+                        <span>
+                            {{ detection.confidence }}%
+                        </span>
+
+                    </div>
+
+                    {% empty %}
+
+                    <p>
+                        No objects detected.
+                    </p>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            <div class="result-actions">
+                <form method="POST" action="{% url 'store_result' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="result_url" value="{{ result_url }}">
+                    <input type="hidden" name="media_type" value="image">
+                    <button type="submit" class="result-btn store-btn">STORE RESULT</button>
+                </form>
+                <form method="POST" action="{% url 'delete_result' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="result_url" value="{{ result_url }}">
+                    <button type="submit" class="result-btn delete-btn">DELETE RESULT</button>
+                </form>
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- ================================= -->
+        <!-- VIDEO RESULT -->
+        <!-- ================================= -->
+
+        {% if video_result_url %}
+
+        <section class="result-section">
+
+            <div class="result-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        VIDEO PROCESSING COMPLETE
+                    </span>
+
+                    <h2>
+                        DETECTED VIDEO
+                    </h2>
+
+                </div>
+
+                <div class="result-count">
+
+                    {{ total_frames }}
+
+                    <span>
+                        FRAMES
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="video-result">
+
+                <video
+                    controls
+                    playsinline
+                >
+
+                    <source
+                        src="{{ video_result_url }}"
+                        type="video/mp4"
+                    >
+
+                </video>
+
+            </div>
+
+            <div class="result-actions">
+                <form method="POST" action="{% url 'store_result' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="result_url" value="{{ video_result_url }}">
+                    <input type="hidden" name="media_type" value="video">
+                    <button type="submit" class="result-btn store-btn">STORE RESULT</button>
+                </form>
+                <form method="POST" action="{% url 'delete_result' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="result_url" value="{{ video_result_url }}">
+                    <button type="submit" class="result-btn delete-btn">DELETE RESULT</button>
+                </form>
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+    </main>
+
+
+    <!-- ================================= -->
+    <!-- FOOTER -->
+    <!-- ================================= -->
+
+    <footer>
+
+        <span>
+            NEURAL VISION SYSTEM
+        </span>
+
+        <span>
+            YOLO / OPENCV / DJANGO
+        </span>
+
+    </footer>
+
+</div>
+
+
+<script>
+
+function showMode(mode, button) {
+
+    const contents =
+        document.querySelectorAll(".mode-content");
+
+    const buttons =
+        document.querySelectorAll(".mode-btn");
+
+
+    contents.forEach(function(content) {
+
+        content.classList.remove("active");
+
+    });
+
+
+    buttons.forEach(function(btn) {
+
+        btn.classList.remove("active");
+
+    });
+
+
+    document
+        .getElementById(mode)
+        .classList.add("active");
+
+
+    button.classList.add("active");
+
+}
+
+</script>
+
+
+</body>
+
+</html>
